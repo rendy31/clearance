@@ -22,6 +22,12 @@ Route::post('proses_login', [AuthController::class, 'authenticate']);
 
 Route::get('/homeAdmin', [homeController::class, 'index'])->name('homeAdmin');
 
-Route::resource('prodi', prodiController::class);
+Route::get('/prodi', [prodiController::class, 'index'])->name('Prodi');
+Route::post('/simpanprodi', [prodiController::class, 'store'])->name('simpanProdi');
+Route::get('/edit/{id}', [prodiController::class, 'edit'])->name('editProdi');
+Route::post('/prodi/update', [prodiController::class, 'update']);
+Route::delete('/hapus/{id}', [prodiController::class, 'destroy'])->name('deleteProdi');
+
+// Route::resource('prodi', prodiController::class);
 Route::resource('mahasiswa', mahasiswaController::class);
 Route::resource('tahunakademik', tahunakademikController::class);

@@ -6,11 +6,13 @@
 	
 	<div class="row">
 		<div class="col">
-			<form action="prodi" method="post">
+			<form action="/prodi/update" method="post">
+				@csrf
 				<div class="row mb-3">
-					<label for="inputProdi" class="col-sm-2 col-form-label">Prodi</label>
+					<input type="hidden" name="id" value="{{ $prodi->id }}">
+					<label class="col-sm-2 col-form-label">Prodi</label>
 					<div class="col-sm-6">
-						<input type="text" name="prodi" class="form-control" id="inputProdi">
+						<input type="text" name="prodi" class="form-control" value="{{ $prodi->namaProdi }}">
 					</div>
 				</div>
 

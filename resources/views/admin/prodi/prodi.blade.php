@@ -11,12 +11,15 @@
 	@endif
 	<div class="row">
 		<div class="col">
-			<form action="/prodi" method="post">
+			<form action="/simpanprodi" method="post">
 				@csrf
 				<div class="row mb-3">
 					<label for="inputProdi" class="col-sm-2 col-form-label">Prodi</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputProdi" name="namaProdi" value="">
+						<input type="text" class="form-control @error('prodi') is-invalid @enderror" id="inputProdi" name="prodi" value="{{ old('prodi') }}">
+						@error('prodi')
+							<div class="alert alert-danger">{{ $message }}</div>
+						@enderror
 					</div>
 				</div>
 				
@@ -30,8 +33,13 @@
 					<tr>
 						<td>{{$prodi->namaProdi}}</td>
 						<td>
-							<span class="badge" style="color:darkorange;"><i class="bi bi-pencil-square"></i> Edit </span>
-							<span class="badge" style="color:red;"><i class="bi bi-x-square"></i> Hapus </span>
+							<a href="/edit/{{$prodi->id}}"><span class="badge" style="color:darkorange;"><i class="bi bi-pencil-square"></i> Edit </span></a>
+							<!-- <form action="{{ url('hapus/'.$prodi->id) }}" method="post" class="d-inline" onsubmit="return confirm('Yakin Hapus Nama Prodi {{$prodi->namaProdi}} ?')">
+								@method("delete")
+								@csrf
+								<button class="badge" style="color:red;"><i class="bi bi-x-square"></i> Hapus </button>
+							</form> -->
+							
 						</td>
 					</tr>
 					@endforeach()

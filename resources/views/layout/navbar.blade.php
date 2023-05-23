@@ -36,16 +36,16 @@
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="mahasiswa">Data Mahasiswa</a>
+						<a class="nav-link" href="/mahasiswa">Data Mahasiswa</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Data User</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="prodi">Data Prodi</a>
+						<a class="nav-link" href="/prodi">Data Prodi</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="tahunakademik">Tahun Akademik</a>
+						<a class="nav-link" href="/tahunakademik">Tahun Akademik</a>
 					</li>
 				</ul>
 			</div>
